@@ -1,3 +1,6 @@
+### Họ và tên: Lâm Minh Thông
+### MSSV: 51900836
+
 # **1. Tìm hiểu, so sánh các phương pháp Optimizer trong huấn luyện mô hình học máy**
 ## **1.1	Tìm hiểu về Optimizer** 
 Trước khi ta đi sâu vào tìm hiểu Optimizer và các thuật toán trong nó, ta cần hiểu thế nào là thuật toán tối ưu (optimizer). Hiểu một cách đơn giản và cụ thể, thuật toán tối ưu là cơ sở xây dựng mô hình Neutral Network, nhằm “học” được các đặc điểm hoặc mẫu (feature hoặc pattern) của dữ liệu đầu vào. Từ đó, mục tiêu là tìm ra một cặp trọng số (weights) và độ lệch (bias) phù hợp để tối ưu hóa mô hình. Nhưng khó khăn ở đây là làm thế nào để có thể tìm ra các trọng số và độ lệch phù hợp để tránh lãng phí tài nguyên. Và đó là lý do vì sao các thuật toán tối ưu ra được ra đời.
