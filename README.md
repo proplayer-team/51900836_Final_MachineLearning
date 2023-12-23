@@ -6,7 +6,7 @@ Trước khi ta đi sâu vào tìm hiểu Optimizer và các thuật toán trong
 ### **1.2.1 Gradient Descent**
 Trong việc tối ưu hóa mạng Neutral, Gradient Descent (GD) là một trong những thuật toán phổ biến nhất. Được thiết kế nhầm mục đích giảm thiểu hàm mất mát (loss function) J (θ), trong đó (θ) đại diện cho tập hợp các trọng số (weights) của mô hình cần được tối ưu. Quy tắc của GD được tổng quát:
 
-θ_(t+1)= θ_t- η.∇_θ J(θ_t )
+<img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/GS.png">
 
 
 Trong đó, ∇_θ J(θ_t ) biểu thị gradient của hàm mất mát tại θ ở bước t. η là một giá trị dương được gọi là tốc độ học (learning rate), quyết định kích thước của các bước di chuyển đến giá trị cực tiểu (hoặc cực tiểu địa phương) gọi là local minimum.
@@ -17,14 +17,14 @@ Batch Gradient Desscent dùng để tính gradient của hàm mất mát tại �
 ### **1.2.3 Stochastic Gradient Descent (SGD)**
 Để khác phục hạn chế của Batch Gradient Descent, thuật toán Stochastic Gradient Descent ra đời để thực hiện cập nhật trọng số sau mỗi mẫu dữ liệu x^((ⅈ) ) có nhãn tương ứng y^((ⅈ) ) như sau:
 
-θ_(t+1)= θ_t- η.∇_θ J(θ_t;x^((ⅈ) )  ;y^((ⅈ) ) )
+<img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/SGD.png">
 
 Với cách cập nhật này, SGD thường nhanh hơn Batch GD và có thể áp dụng vào quá trình học trực tuyến (online learning) khi tập huấn luyện được cập nhật liên tục dữ liệu mới. Trong SGD bộ trọng số θ thường được cập nhật liên tục hơn Batch GD, chính vì vậy mà hàm mất mát dao động nhiều hơn. Nhưng điều này lại gây khó khăn cho SGD có vẻ không ổn định, nhưng điểm đặc biệt là sự di chuyển của các điểm locol minimum có tiềm năng lớn hơn. Đồng thời, tốc độ học (learning rate) giảm, khả năng hội tụ của SGD cũng tương đương với Batch GD.
 
 ### **1.2.4 Mini-batch Gradient Descent**
 Mini-batch Gradient Descent khá khác với các thuật toán trước đó, Mini-batch GD sử dụng k điểm dữ liệu để cập nhật trọng số (1 < k < N với N là tổng số điểm dữ liệu).
 
-θ_(t+1)= θ_t- η.∇_θ J(θ_t;x^((ⅈ:i+k) )  ;y^((ⅈ:i+k) ) )
+<img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/MGD.png">
 
 Mini-batch GD giảm độ biến động của hàm mất mát so với SGD và chi phí tính toán gradient với k điểm dữ liệu là chấp nhận được. Khi huấn luyện mạng Neutral, Mini-batch GD thường được ưu tiên chọn, và do đó, trong một số trường hợp, nó được coi là một biến thể của SGD. Tuy nhiên, Mini-batch GD một mình không đảm bảo việc đạt được điểm cực tiểu của hàm mất mát, và các yếu tố như tốc độ học, đặc tính của dữ liệu, và đặc điểm của hàm mất mát cũng đóng vai trò quan trọng trong quá trình này.
 
@@ -33,9 +33,12 @@ Mini-batch GD giảm độ biến động của hàm mất mát so với SGD và
 <img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/GDvabienthe.png">
 
 ### **1.2.7 Thử thách với SGD**
-•	Lựa chọn một learning rate phù hợp là một nhiệm vụ rất khó. 
+•	Lựa chọn một learning rate phù hợp là một nhiệm vụ rất khó.
+
 •	Một lịch trình learning rate duy nhất có thể không thích ứng được với các bộ dữ liệu đa dạng. 
+
 •	Áp dụng cùng một learning rate cho tất cả các tham số có thể không phải là lựa chọn tốt nhất. 
+
 •	Object function cho mạng Neutral có tính phi lồi cao, đồng nghĩa với việc có nhiều điểm cực tiểu địa phương. 
 
 ### **1.2.8 Momemtum**
