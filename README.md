@@ -97,7 +97,9 @@ RMSprop giải quyết vấn đề tỷ lệ học giảm dần của Adagrad b�
 
 RMSprop nổi bật với ưu điểm chính là khắc phục hiệu quả vấn đề của Adagrad, đó là tốc độ học giảm dần theo thời gian, gây chậm trễ trong quá trình huấn luyện và có thể dẫn đến hiện tượng đóng băng. Tuy nhiên, thuật toán RMSprop có khả năng dẫn đến kết quả là điểm cực tiểu địa phương chứ không phải điểm cực tiểu toàn cục như Momentum. Vì vậy, người ta thường kết hợp cả hai thuật toán Momentum và RMSprop để tạo ra một thuật toán tối ưu được gọi là Adam.
 
-### **1.2.10 Adam (Adaptive Moment Estimation) là một thuật toán tối ưu cho phép tính tốc độ học thích ứng với mỗi trọng số. Thuật toán này kết hợp hai kỹ thuật là động lượng (Momentum) và RMSprop. Động lượng là một kỹ thuật giúp giảm độ dao động của gradient, giúp thuật toán hội tụ nhanh hơn. RMSprop là một kỹ thuật giúp giảm ảnh hưởng của gradient nhiễu, giúp thuật toán hội tụ chính xác hơn.
+### **1.2.10 Adam**
+
+Thuật toán Adam(Adaptive Moment Estimation) là một thuật toán tối ưu cho phép tính tốc độ học thích ứng với mỗi trọng số. Thuật toán này kết hợp hai kỹ thuật là động lượng (Momentum) và RMSprop. Động lượng là một kỹ thuật giúp giảm độ dao động của gradient, giúp thuật toán hội tụ nhanh hơn. RMSprop là một kỹ thuật giúp giảm ảnh hưởng của gradient nhiễu, giúp thuật toán hội tụ chính xác hơn.
 
 
 Giá trị trung bình mô-men m_t và trung bình bình phương các gradient trước đó v_t được tính bởi công thức sau:
