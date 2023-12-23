@@ -171,7 +171,7 @@ trong đó λ là tham số siêu tham số điều khiển độ mạnh của p
 
 •	Điều này khuyến khích mô hình tạo ra các dự đoán đa dạng và ít tự tin hơn.
 
-**4.	Lợi ích**:
+**4.	Lợi ích:**
 •	Ngăn ngừa quá khớp: Entropy regularization có thể giúp ngăn ngừa quá khớp bằng cách ngăn cản mô hình trở nên quá tự tin trong các dự đoán của nó trên tập dữ liệu đào tạo.
 
 •	Cải thiện khả năng tổng quát: Bằng cách khuyến khích một tập hợp dự đoán đa dạng hơn, entropy regularization có thể cải thiện khả năng của mô hình trong việc tổng quát hóa sang dữ liệu mới, chưa thấy.
@@ -186,88 +186,132 @@ trong đó λ là tham số siêu tham số điều khiển độ mạnh của p
 •	Các mô hình sinh: Entropy regularization có thể được sử dụng trong các mô hình sinh để khuyến khích sự đa dạng trong các mẫu được tạo.
 
 **6.	Ví dụ:**
+
 •	Trong một tác vụ phân loại đa lớp, mô hình ban đầu có thể dự đoán một lớp duy nhất với độ tin cậy rất cao.
 
 •	Bằng cách thêm entropy regularization, mô hình có thể được khuyến khích dự đoán một phạm vi rộng hơn các lớp với độ tin cậy thấp hơn, điều này có thể dẫn đến khả năng tổng quát hóa tốt hơn. 
 
 **7.	Chỉnh sửa siêu tham số:**
+
 •	Tham số siêu tham số λ điều khiển độ mạnh của phương pháp regularizer.
 
 •	Điều quan trọng là phải điều chỉnh tham số siêu tham số này để đạt được sự cân bằng mong muốn giữa sự đa dạng và độ chính xác.
 
-1.3.2.2 Data augmentation
+**1.3.2.2 Data augmentation**
 Data augmentation, hay còn gọi là gia tăng dữ liệu, là một kỹ thuật trong học máy nhằm nhân rộng kích thước của tập dữ liệu huấn luyện bằng cách tạo ra các phiên bản có chỉnh sửa nhỏ của dữ liệu hiện có. Mục tiêu của kỹ thuật này là cải thiện hiệu suất của mô hình học máy bằng cách giảm bớt hiện tượng quá khớp (overfitting) và tăng cường khả năng tổng quát (generalization).
 
-Đặc điểm của Data augmentation:
+**Đặc điểm của Data augmentation:**
 
 •	**Giảm quá khớp:** Mô hình học máy được huấn luyện trên một tập dữ liệu cụ thể có thể dễ bị ảnh hưởng bởi những đặc điểm riêng biệt của tập dữ liệu đó, leading to poor performance on unseen data. Data augmentation giúp giảm thiểu sự phụ thuộc này bằng cách đa dạng hóa tập dữ liệu, khiến mô hình khó học những mô hình phức tạp không liên quan đến bản chất thực sự của bài toán.
+
 •	**Tăng cường khả năng tổng quát:** Bằng cách tiếp xúc với nhiều biến thể của dữ liệu, mô hình học máy học được cách nhận dạng các mẫu chung và bỏ qua những nhiễu nhỏ, giúp tăng khả năng dự đoán chính xác trên dữ liệu mới chưa từng gặp.
+
 •	**Tiết kiệm chi phí:** Thu thập dữ liệu trong thế giới thực thường tốn kém và mất thời gian. Data augmentation cung cấp một phương pháp thay thế hiệu quả để có được một tập dữ liệu phong phú hơn mà không cần thu thập thêm dữ liệu thật.
 
 **Các phương pháp data augmentation phổ biến:**
+
 •	**Hình ảnh:** Xoay, lật, thay đổi độ sáng, độ tương phản, cắt, zoom, vv.
+
 •	**Âm thanh:** Thay đổi tốc độ, pitch, thêm tạp âm, vv.
+
 •	**Dữ liệu văn bản:** Xáo trộn từ, thay thế từ đồng nghĩa, xóa/thêm từ ngẫu nhiên, vv.
+
 •	**Dữ liệu số:** Thay đổi tỷ lệ, dịch, co giãn, vv.
 
 **Cách lựa chọn phương pháp data augmentation phù hợp:**
+
 •	**Loại dữ liệu:** Phương pháp phù hợp sẽ khác nhau tùy thuộc vào loại dữ liệu đang được xử lý (hình ảnh, âm thanh, văn bản, vv).
+
 •	**Đặc điểm bài toán:** Cần hiểu rõ bản chất của bài toán để chọn những phương pháp không làm thay đổi bản chất của dữ liệu hay tạo ra dữ liệu không hợp lý.
+
 •	**Hiệu quả thực nghiệm:** Thử nghiệm các phương pháp khác nhau trên tập dữ liệu nhỏ để đánh giá hiệu quả và chọn phương pháp phù hợp nhất.
 
 #### **1.3.2.3 Memory-based methods**
+
 Memory-based methods (phương pháp dựa trên bộ nhớ) là một nhóm các kỹ thuật trong học máy nhằm giải quyết vấn đề học liên tục (continual learning) bằng cách lưu trữ và sử dụng lại thông tin từ các nhiệm vụ trước đó. Thay vì cố gắng học tất cả các kiến thức trong một lần, các phương pháp này cho phép mô hình học dần dần theo thời gian và tích lũy kiến thức trong một kho lưu trữ bộ nhớ.
 
  
 **Cách thức hoạt động:**
+
 •	**Lưu trữ dữ liệu:** Khi mô hình được đào tạo trên một nhiệm vụ mới, dữ liệu liên quan đến nhiệm vụ đó được lưu trữ trong một kho lưu trữ bộ nhớ, có thể ở dạng thô hoặc được xử lý trước.
+
 •	**Trích xuất kiến thức:** Khi mô hình cần thực hiện một nhiệm vụ mới hoặc cập nhật kiến thức hiện có, nó sẽ truy cập vào kho lưu trữ bộ nhớ để trích xuất các thông tin liên quan, chẳng hạn như các mẫu dữ liệu, các tham số mô hình hoặc các quy tắc quyết định.
+
 •	**Sử dụng kiến thức:** Kiến thức được trích xuất từ kho lưu trữ bộ nhớ được sử dụng để hỗ trợ quá trình học tập mới, giúp mô hình học nhanh hơn và hiệu quả hơn, đồng thời giảm thiểu sự lãng quên kiến thức cũ.
 
 **Các loại phương pháp dựa trên bộ nhớ:**
+
 **•	Replay-based methods:** Lưu trữ và phát lại dữ liệu từ các nhiệm vụ trước đó để củng cố kiến thức cũ.
+
 **•	Rehearsal methods:** Lựa chọn và lưu trữ một tập nhỏ các mẫu dữ liệu đại diện cho các nhiệm vụ trước đó.
+
 **•	Generative replay:** Sử dụng các mô hình sinh (generative models) để tạo ra dữ liệu mới từ các nhiệm vụ trước đó.
+
 **•	Regularization methods:** Thêm các ràng buộc vào hàm mất mát để khuyến khích mô hình giữ lại kiến thức cũ.
 
 **Ưu điểm:**
+
 **•	Giảm thiểu sự lãng quên:** Giúp mô hình giữ lại được kiến thức từ các nhiệm vụ trước đó khi học các nhiệm vụ mới.
+
 **•	Tăng cường khả năng tổng quát:** Giúp mô hình có thể thích ứng với các tình huống mới và dữ liệu chưa từng gặp.
+
 **•	Hiệu quả đối với các bài toán phức tạp:** Có thể xử lý các bài toán đòi hỏi nhiều kiến thức và kinh nghiệm.
 
 **Nhược điểm:**
+
 **•	Chi phí bộ nhớ:** Việc lưu trữ dữ liệu và kiến thức có thể tốn nhiều bộ nhớ, đặc biệt khi số lượng nhiệm vụ tăng lên.
+
 **•	Hiệu suất:** Việc truy cập và sử dụng kho lưu trữ bộ nhớ có thể làm giảm hiệu suất của mô hình.
+
 **•	Dễ bị ảnh hưởng bởi nhiễu:** Nếu kho lưu trữ bộ nhớ chứa nhiều dữ liệu nhiễu, có thể ảnh hưởng đến chất lượng học tập của mô hình.
 
 **Ứng dụng:**
+
 **•	Học liên tục:** Sử dụng trong các hệ thống cần học liên tục từ các luồng dữ liệu mới.
+
 **•	Học tăng cường:** Sử dụng để lưu trữ và sử dụng lại các kinh nghiệm trong quá khứ trong các thuật toán học tăng cường.
+
 **•	Hệ thống gợi ý:** Sử dụng để lưu trữ thông tin về sở thích của người dùng và đưa ra các gợi ý phù hợp.
+
 **•	Hệ thống hỏi đáp:** Sử dụng để lưu trữ thông tin và kiến thức để trả lời các câu hỏi của người dùng.
 
 **1.3.3 Test Production**
+
 Test Production là một quá trình kiểm tra và triển khai các mô hình học máy trong môi trường sản xuất. Quá trình này bao gồm các bước sau:
+
 **•	Kiểm thử:** Mô hình học máy được kiểm tra trên tập dữ liệu kiểm thử để đánh giá hiệu quả của mô hình.
+
 **•	Triển khai:** Mô hình học máy được triển khai trong môi trường sản xuất và bắt đầu sử dụng để dự đoán.
 
 **Tầm quan trọng của Test Production**
+
 Test Production là một bước quan trọng trong quy trình phát triển mô hình học máy. Quá trình này giúp đảm bảo rằng mô hình học máy hoạt động hiệu quả và đáng tin cậy trong môi trường sản xuất.
 
 **Các lợi ích của Test Production**
+
 Test Production mang lại nhiều lợi ích cho các mô hình học máy, bao gồm:
+
 **•	Giảm thiểu rủi ro:** Test Production giúp giảm thiểu rủi ro của việc triển khai các mô hình học máy không hiệu quả hoặc không đáng tin cậy.
+
 **•	Tăng cường hiệu quả:** Test Production giúp cải thiện hiệu quả của các mô hình học máy bằng cách phát hiện và khắc phục các lỗi trước khi triển khai.
+
 **•	Tăng cường tin cậy:** Test Production giúp tăng cường tin cậy của các mô hình học máy bằng cách cung cấp bằng chứng về hiệu quả và độ chính xác của mô hình.
 
 **Các phương pháp Test Production phổ biến:**
+
 **•	Blue-green deployment:** Phương pháp này sử dụng hai phiên bản của mô hình: phiên bản hiện tại (blue) và phiên bản mới (green). Khi phiên bản mới được phát triển và kiểm tra thành công, nó sẽ được triển khai song song với phiên bản hiện tại. Sau một khoảng thời gian, phiên bản hiện tại sẽ bị ngừng và phiên bản mới sẽ trở thành phiên bản chính thức.
+
 **•	Canary deployment:** Phương pháp này sử dụng một nhóm nhỏ người dùng để thử nghiệm phiên bản mới của mô hình. Nếu phiên bản mới hoạt động tốt, nó sẽ được triển khai cho tất cả người dùng.
+
 **•	A/B testing:** Phương pháp này sử dụng hai nhóm người dùng: nhóm A sử dụng phiên bản hiện tại của mô hình và nhóm B sử dụng phiên bản mới. Sau một khoảng thời gian, hiệu quả của hai phiên bản sẽ được so sánh để xác định phiên bản nào tốt hơn.
 
 **Các ứng dụng của Test Production**
+
 Test Production có thể được áp dụng cho nhiều loại mô hình học máy, bao gồm:
+
 **•	Mô hình phân loại:** Test Production có thể được sử dụng để kiểm tra hiệu quả của các mô hình phân loại, chẳng hạn như mô hình nhận dạng hình ảnh hoặc mô hình phân loại văn bản.
+
 **•	Mô hình hồi quy:** Test Production có thể được sử dụng để kiểm tra hiệu quả của các mô hình hồi quy, chẳng hạn như mô hình dự đoán giá cả hoặc mô hình dự đoán điểm số.
+
 **•	Mô hình dự đoán:** Test Production có thể được sử dụng để kiểm tra hiệu quả của các mô hình dự đoán, chẳng hạn như mô hình dự đoán thời tiết hoặc mô hình dự đoán nhu cầu.
 
