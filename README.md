@@ -147,7 +147,7 @@ Continual Learning (Học liên tục) là một lĩnh vực nghiên cứu trong
 
 ### **1.3.2 Các phương pháp trong Continual Learning**
 
-#### **1.3.2.1 Entropy regularization **
+#### **1.3.2.1 Entropy regularization**
 Entropy regularization là một kỹ thuật được sử dụng trong học máy để khuyến khích mô hình tạo ra các dự đoán đa dạng và ít tự tin hơn. Nó hoạt động bằng cách thêm một hạng tử phạt vào hàm mất mát của mô hình, điều này khuyến khích mô hình có phân phối đầu ra có entropy cao hơn (nghĩa là nhiều sự không chắc chắn hơn).
 
 **Cách hoạt động:**
@@ -212,7 +212,7 @@ Data augmentation, hay còn gọi là gia tăng dữ liệu, là một kỹ thu�
 
 •	**Tiết kiệm chi phí:** Thu thập dữ liệu trong thế giới thực thường tốn kém và mất thời gian. Data augmentation cung cấp một phương pháp thay thế hiệu quả để có được một tập dữ liệu phong phú hơn mà không cần thu thập thêm dữ liệu thật.
 
-**Các phương pháp data augmentation phổ biến:**
+##### **Các phương pháp data augmentation phổ biến:**
 
 •	**Hình ảnh:** Xoay, lật, thay đổi độ sáng, độ tương phản, cắt, zoom, vv.
 
@@ -235,7 +235,7 @@ Data augmentation, hay còn gọi là gia tăng dữ liệu, là một kỹ thu�
 Memory-based methods (phương pháp dựa trên bộ nhớ) là một nhóm các kỹ thuật trong học máy nhằm giải quyết vấn đề học liên tục (continual learning) bằng cách lưu trữ và sử dụng lại thông tin từ các nhiệm vụ trước đó. Thay vì cố gắng học tất cả các kiến thức trong một lần, các phương pháp này cho phép mô hình học dần dần theo thời gian và tích lũy kiến thức trong một kho lưu trữ bộ nhớ.
 
  
-**Cách thức hoạt động:**
+##### **Cách thức hoạt động:**
 
 •	**Lưu trữ dữ liệu:** Khi mô hình được đào tạo trên một nhiệm vụ mới, dữ liệu liên quan đến nhiệm vụ đó được lưu trữ trong một kho lưu trữ bộ nhớ, có thể ở dạng thô hoặc được xử lý trước.
 
@@ -243,7 +243,7 @@ Memory-based methods (phương pháp dựa trên bộ nhớ) là một nhóm cá
 
 •	**Sử dụng kiến thức:** Kiến thức được trích xuất từ kho lưu trữ bộ nhớ được sử dụng để hỗ trợ quá trình học tập mới, giúp mô hình học nhanh hơn và hiệu quả hơn, đồng thời giảm thiểu sự lãng quên kiến thức cũ.
 
-**Các loại phương pháp dựa trên bộ nhớ:**
+##### **Các loại phương pháp dựa trên bộ nhớ:**
 
 **•	Replay-based methods:** Lưu trữ và phát lại dữ liệu từ các nhiệm vụ trước đó để củng cố kiến thức cũ.
 
@@ -253,7 +253,7 @@ Memory-based methods (phương pháp dựa trên bộ nhớ) là một nhóm cá
 
 **•	Regularization methods:** Thêm các ràng buộc vào hàm mất mát để khuyến khích mô hình giữ lại kiến thức cũ.
 
-**Ưu điểm:**
+##### **Ưu điểm:**
 
 **•	Giảm thiểu sự lãng quên:** Giúp mô hình giữ lại được kiến thức từ các nhiệm vụ trước đó khi học các nhiệm vụ mới.
 
@@ -261,7 +261,7 @@ Memory-based methods (phương pháp dựa trên bộ nhớ) là một nhóm cá
 
 **•	Hiệu quả đối với các bài toán phức tạp:** Có thể xử lý các bài toán đòi hỏi nhiều kiến thức và kinh nghiệm.
 
-**Nhược điểm:**
+##### **Nhược điểm:**
 
 **•	Chi phí bộ nhớ:** Việc lưu trữ dữ liệu và kiến thức có thể tốn nhiều bộ nhớ, đặc biệt khi số lượng nhiệm vụ tăng lên.
 
@@ -269,7 +269,7 @@ Memory-based methods (phương pháp dựa trên bộ nhớ) là một nhóm cá
 
 **•	Dễ bị ảnh hưởng bởi nhiễu:** Nếu kho lưu trữ bộ nhớ chứa nhiều dữ liệu nhiễu, có thể ảnh hưởng đến chất lượng học tập của mô hình.
 
-**Ứng dụng:**
+##### **Ứng dụng:**
 
 **•	Học liên tục:** Sử dụng trong các hệ thống cần học liên tục từ các luồng dữ liệu mới.
 
@@ -279,7 +279,7 @@ Memory-based methods (phương pháp dựa trên bộ nhớ) là một nhóm cá
 
 **•	Hệ thống hỏi đáp:** Sử dụng để lưu trữ thông tin và kiến thức để trả lời các câu hỏi của người dùng.
 
-**1.3.3 Test Production**
+### **1.3.3 Test Production**
 
 Test Production là một quá trình kiểm tra và triển khai các mô hình học máy trong môi trường sản xuất. Quá trình này bao gồm các bước sau:
 
@@ -287,11 +287,11 @@ Test Production là một quá trình kiểm tra và triển khai các mô hình
 
 **•	Triển khai:** Mô hình học máy được triển khai trong môi trường sản xuất và bắt đầu sử dụng để dự đoán.
 
-**Tầm quan trọng của Test Production**
+##### **Tầm quan trọng của Test Production**
 
 Test Production là một bước quan trọng trong quy trình phát triển mô hình học máy. Quá trình này giúp đảm bảo rằng mô hình học máy hoạt động hiệu quả và đáng tin cậy trong môi trường sản xuất.
 
-**Các lợi ích của Test Production**
+##### **Các lợi ích của Test Production**
 
 Test Production mang lại nhiều lợi ích cho các mô hình học máy, bao gồm:
 
@@ -301,7 +301,7 @@ Test Production mang lại nhiều lợi ích cho các mô hình học máy, bao
 
 **•	Tăng cường tin cậy:** Test Production giúp tăng cường tin cậy của các mô hình học máy bằng cách cung cấp bằng chứng về hiệu quả và độ chính xác của mô hình.
 
-**Các phương pháp Test Production phổ biến:**
+##### **Các phương pháp Test Production phổ biến:**
 
 **•	Blue-green deployment:** Phương pháp này sử dụng hai phiên bản của mô hình: phiên bản hiện tại (blue) và phiên bản mới (green). Khi phiên bản mới được phát triển và kiểm tra thành công, nó sẽ được triển khai song song với phiên bản hiện tại. Sau một khoảng thời gian, phiên bản hiện tại sẽ bị ngừng và phiên bản mới sẽ trở thành phiên bản chính thức.
 
@@ -309,7 +309,7 @@ Test Production mang lại nhiều lợi ích cho các mô hình học máy, bao
 
 **•	A/B testing:** Phương pháp này sử dụng hai nhóm người dùng: nhóm A sử dụng phiên bản hiện tại của mô hình và nhóm B sử dụng phiên bản mới. Sau một khoảng thời gian, hiệu quả của hai phiên bản sẽ được so sánh để xác định phiên bản nào tốt hơn.
 
-**Các ứng dụng của Test Production**
+##### **Các ứng dụng của Test Production**
 
 Test Production có thể được áp dụng cho nhiều loại mô hình học máy, bao gồm:
 
