@@ -146,16 +146,19 @@ Tốc độ học γ_t sẽ tăng khi m_t tăng, và giảm khi v_t tăng. Đi�
 Continual Learning (Học liên tục) là một lĩnh vực nghiên cứu trong học máy nhằm giải quyết vấn đề học từ dữ liệu mới mà không làm mất đi kiến thức đã học trước đó. Trong học máy truyền thống, mô hình học máy được đào tạo trên một tập dữ liệu cố định và sau đó được sử dụng để dự đoán trên các dữ liệu mới. Tuy nhiên, trong nhiều ứng dụng thực tế, dữ liệu liên tục thay đổi và cập nhật, khiến mô hình học máy truyền thống dễ bị lỗi. Continual Learning đề xuất một số phương pháp để giải quyết vấn đề này.
 
 ### **1.3.2 Các phương pháp trong Continual Learning**
+
 #### **1.3.2.1 Entropy regularization **
 Entropy regularization là một kỹ thuật được sử dụng trong học máy để khuyến khích mô hình tạo ra các dự đoán đa dạng và ít tự tin hơn. Nó hoạt động bằng cách thêm một hạng tử phạt vào hàm mất mát của mô hình, điều này khuyến khích mô hình có phân phối đầu ra có entropy cao hơn (nghĩa là nhiều sự không chắc chắn hơn).
 
 **Cách hoạt động:**
+
 **1.	Tính entropy:**
 •	Đối với bài toán phân loại đa lớp, entropy của phân phối xác suất trên các lớp được tính như sau:
 
 <img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/entropy.png">
 
 **2.	Thêm vào hàm mất mát:**
+
 •	Entropy của các dự đoán của mô hình được thêm vào hàm mất mát dưới dạng hạng tử phạt:
 
 <img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/entropy_lossfunction.png">
@@ -163,6 +166,7 @@ Entropy regularization là một kỹ thuật được sử dụng trong học m
 trong đó λ là tham số siêu tham số điều khiển độ mạnh của phương pháp regularizer.
 
 **3.	Huấn luyện mô hình:**
+
 •	Mô hình sau đó được huấn luyện để tối thiểu hóa hàm mất mát tổng thể, hiện bao gồm cả hình phạt entropy.
 
 •	Điều này khuyến khích mô hình tạo ra các dự đoán đa dạng và ít tự tin hơn.
