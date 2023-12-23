@@ -201,6 +201,7 @@ trong đó λ là tham số siêu tham số điều khiển độ mạnh của p
 •	Điều quan trọng là phải điều chỉnh tham số siêu tham số này để đạt được sự cân bằng mong muốn giữa sự đa dạng và độ chính xác.
 
 **1.3.2.2 Data augmentation**
+
 Data augmentation, hay còn gọi là gia tăng dữ liệu, là một kỹ thuật trong học máy nhằm nhân rộng kích thước của tập dữ liệu huấn luyện bằng cách tạo ra các phiên bản có chỉnh sửa nhỏ của dữ liệu hiện có. Mục tiêu của kỹ thuật này là cải thiện hiệu suất của mô hình học máy bằng cách giảm bớt hiện tượng quá khớp (overfitting) và tăng cường khả năng tổng quát (generalization).
 
 **Đặc điểm của Data augmentation:**
