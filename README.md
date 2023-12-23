@@ -8,7 +8,6 @@ Trong việc tối ưu hóa mạng Neutral, Gradient Descent (GD) là một tron
 
 <img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/GS.png">
 
-
 Trong đó, ∇_θ J(θ_t ) biểu thị gradient của hàm mất mát tại θ ở bước t. η là một giá trị dương được gọi là tốc độ học (learning rate), quyết định kích thước của các bước di chuyển đến giá trị cực tiểu (hoặc cực tiểu địa phương) gọi là local minimum.
 
 ### **1.2.2 Batch Gradient Descent**
@@ -317,3 +316,17 @@ Test Production có thể được áp dụng cho nhiều loại mô hình học
 **•	Mô hình hồi quy:** Test Production có thể được sử dụng để kiểm tra hiệu quả của các mô hình hồi quy, chẳng hạn như mô hình dự đoán giá cả hoặc mô hình dự đoán điểm số.
 
 **•	Mô hình dự đoán:** Test Production có thể được sử dụng để kiểm tra hiệu quả của các mô hình dự đoán, chẳng hạn như mô hình dự đoán thời tiết hoặc mô hình dự đoán nhu cầu.
+
+## **TÀI LIỆU THAM KHẢO**
+
+**Tiếng Việt**
+
+[1]	T. T. Trực, "Optimizer- Hiểu sâu về các thuật toán tối ưu," 2020.
+
+**Tiếng Anh**
+
+[2] 	wiki.continualai.org, "Introduction to Continual Learning".
+
+[3] 	E. Regularization. [Online]. Available: https://paperswithcode.com/method/entropy-regularization.
+
+[4] 	T. F. Stack, "Continual Learning".
