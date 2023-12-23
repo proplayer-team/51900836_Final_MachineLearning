@@ -5,6 +5,8 @@ Trước khi ta đi sâu vào tìm hiểu Optimizer và các thuật toán trong
 ## **1.2	Các thuật toán tối ưu**
 ### **1.2.1 Gradient Descent**
 Trong việc tối ưu hóa mạng Neutral, Gradient Descent (GD) là một trong những thuật toán phổ biến nhất. Được thiết kế nhầm mục đích giảm thiểu hàm mất mát (loss function) J (θ), trong đó (θ) đại diện cho tập hợp các trọng số (weights) của mô hình cần được tối ưu. Quy tắc của GD được tổng quát:θ_(t+1)= θ_t- η.∇_θ J(θ_t )
+
+
 Trong đó, ∇_θ J(θ_t ) biểu thị gradient của hàm mất mát tại θ ở bước t. η là một giá trị dương được gọi là tốc độ học (learning rate), quyết định kích thước của các bước di chuyển đến giá trị cực tiểu (hoặc cực tiểu địa phương) gọi là local minimum.
 
 ### **1.2.2 Batch Gradient Descent**
