@@ -28,11 +28,11 @@ Mini-batch Gradient Descent khá khác với các thuật toán trước đó, M
 
 Mini-batch GD giảm độ biến động của hàm mất mát so với SGD và chi phí tính toán gradient với k điểm dữ liệu là chấp nhận được. Khi huấn luyện mạng Neutral, Mini-batch GD thường được ưu tiên chọn, và do đó, trong một số trường hợp, nó được coi là một biến thể của SGD. Tuy nhiên, Mini-batch GD một mình không đảm bảo việc đạt được điểm cực tiểu của hàm mất mát, và các yếu tố như tốc độ học, đặc tính của dữ liệu, và đặc điểm của hàm mất mát cũng đóng vai trò quan trọng trong quá trình này.
 
-### **1.2.6 Gradient Descent và các biến thể**
+### **1.2.5 Gradient Descent và các biến thể**
 
 <img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/GDvabienthe.png">
 
-### **1.2.7 Thử thách với SGD**
+### **1.2.6 Thử thách với SGD**
 •	Lựa chọn một learning rate phù hợp là một nhiệm vụ rất khó.
 
 •	Một lịch trình learning rate duy nhất có thể không thích ứng được với các bộ dữ liệu đa dạng. 
@@ -41,7 +41,7 @@ Mini-batch GD giảm độ biến động của hàm mất mát so với SGD và
 
 •	Object function cho mạng Neutral có tính phi lồi cao, đồng nghĩa với việc có nhiều điểm cực tiểu địa phương. 
 
-### **1.2.8 Momemtum**
+### **1.2.7 Momemtum**
 Để khắc phục được những hạn chế trên của thuật toán Gradient Descent, ta sẽ dùng Gradient Descent với Momemtum. Dưới đây là ví dụ về GD với Momemtum:
 
 <img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/Pic1.jpg">
@@ -64,7 +64,7 @@ Trong đó:
 
 Qua ví dụ trên, ta thấy viên bi sẽ vượt tốc tiến tới điểm global minimum và dao động qua lại quanh điểm đó trước khai dừng lại. Đó cũng chính là ưu điểm của thuật toán so với Gradient Descent thông thường bằng việc tiến được đến điểm global minimum và không chỉ dừng lại ở local minimum.
 
-### **1.2.9 Adagrad**
+### **1.2.8 Adagrad**
 Khác với SGD, tốc độ học của Adagrad thay đổi tùy thuộc vào trọng số: tốc độ học là thấp đối với các trọng số liên quan đến các đặc trưng phổ biến, trong khi là cao đối với các trọng số liên quan đến các đặc trưng ít phổ biến.
 
 Ký hiệu 〖 g〗_t là grandient của hàm mất mác (loss function) tại bước 〖t .g〗_t là đạo hàm riêng của hàm mất mát theo θ_i  tại bước t.
@@ -89,7 +89,7 @@ Trong đó:
 
 Adagrad thường khá hiệu quả đối với bài toán có dữ liệu phân mảnh. Tuy nhiên, hạn chế của Adagrad là các tổng bình phương ở mẫu số ngày càng lớn khiến tốc độ học ngày càng giảm và có thể tiệm cận đến giá trị 0 khiến cho quá trình huấn luyện gần như đóng băng.
 
-### **1.2.10 RMSprop**
+### **1.2.9 RMSprop**
 
 RMSprop giải quyết vấn đề tỷ lệ học giảm dần của Adagrad bằng cách chia tỷ lệ học cho trung bình của bình phương gradient.
 
@@ -97,9 +97,7 @@ RMSprop giải quyết vấn đề tỷ lệ học giảm dần của Adagrad b�
 
 RMSprop nổi bật với ưu điểm chính là khắc phục hiệu quả vấn đề của Adagrad, đó là tốc độ học giảm dần theo thời gian, gây chậm trễ trong quá trình huấn luyện và có thể dẫn đến hiện tượng đóng băng. Tuy nhiên, thuật toán RMSprop có khả năng dẫn đến kết quả là điểm cực tiểu địa phương chứ không phải điểm cực tiểu toàn cục như Momentum. Vì vậy, người ta thường kết hợp cả hai thuật toán Momentum và RMSprop để tạo ra một thuật toán tối ưu được gọi là Adam.
 
-### **1.2.11 Adam**
-
-Thuật toán Adam (Adaptive Moment Estimation) là một thuật toán tối ưu cho phép tính tốc độ học thích ứng với mỗi trọng số. Thuật toán này kết hợp hai kỹ thuật là động lượng (Momentum) và RMSprop. Động lượng là một kỹ thuật giúp giảm độ dao động của gradient, giúp thuật toán hội tụ nhanh hơn. RMSprop là một kỹ thuật giúp giảm ảnh hưởng của gradient nhiễu, giúp thuật toán hội tụ chính xác hơn.
+### **1.2.10 Adam (Adaptive Moment Estimation) là một thuật toán tối ưu cho phép tính tốc độ học thích ứng với mỗi trọng số. Thuật toán này kết hợp hai kỹ thuật là động lượng (Momentum) và RMSprop. Động lượng là một kỹ thuật giúp giảm độ dao động của gradient, giúp thuật toán hội tụ nhanh hơn. RMSprop là một kỹ thuật giúp giảm ảnh hưởng của gradient nhiễu, giúp thuật toán hội tụ chính xác hơn.
 
 
 Giá trị trung bình mô-men m_t và trung bình bình phương các gradient trước đó v_t được tính bởi công thức sau:
@@ -136,7 +134,7 @@ Tốc độ học γ_t sẽ tăng khi m_t tăng, và giảm khi v_t tăng. Đi�
 
 • Thuật toán Adam là một thuật toán tối ưu hiệu quả, được sử dụng phổ biến trong học sâu. Thuật toán này kết hợp hai kỹ thuật là động lượng và RMSprop, giúp giảm độ dao động của gradient và ảnh hưởng của gradient nhiễu, giúp thuật toán hội tụ nhanh và chính xác hơn.
 
-### **1.2.12 So sánh các phương pháp Optimizer trong huấn luyện mô hình học máy.**
+### **1.2.11 So sánh các phương pháp Optimizer trong huấn luyện mô hình học máy.**
 
 <img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/Sosanh1.png">
 <img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/Sosanh2.png">
@@ -153,6 +151,7 @@ Entropy regularization là một kỹ thuật được sử dụng trong học m
 **Cách hoạt động:**
 
 **1.	Tính entropy:**
+
 •	Đối với bài toán phân loại đa lớp, entropy của phân phối xác suất trên các lớp được tính như sau:
 
 <img src="https://github.com/proplayer-team/51900836_Final_MachineLearning/blob/main/entropy.png">
@@ -172,6 +171,7 @@ trong đó λ là tham số siêu tham số điều khiển độ mạnh của p
 •	Điều này khuyến khích mô hình tạo ra các dự đoán đa dạng và ít tự tin hơn.
 
 **4.	Lợi ích:**
+
 •	Ngăn ngừa quá khớp: Entropy regularization có thể giúp ngăn ngừa quá khớp bằng cách ngăn cản mô hình trở nên quá tự tin trong các dự đoán của nó trên tập dữ liệu đào tạo.
 
 •	Cải thiện khả năng tổng quát: Bằng cách khuyến khích một tập hợp dự đoán đa dạng hơn, entropy regularization có thể cải thiện khả năng của mô hình trong việc tổng quát hóa sang dữ liệu mới, chưa thấy.
@@ -179,6 +179,7 @@ trong đó λ là tham số siêu tham số điều khiển độ mạnh của p
 •	Khuyến khích khám phá: Trong học tăng cường, entropy regularization có thể khuyến khích tác nhân khám phá nhiều hơn môi trường và khám phá các giải pháp mới.
 
 **5.	Ứng dụng:**
+
 •	Phân loại: Entropy regularization thường được sử dụng trong các tác vụ phân loại, đặc biệt khi xử lý các tập dữ liệu mất cân bằng hoặc khi có mức độ không chắc chắn cao trong dữ liệu.
 
 •	Học tăng cường: Nó cũng được sử dụng trong học tăng cường để khuyến khích khám phá và ngăn tác nhân mắc kẹt trong các giải pháp tối ưu kém.
