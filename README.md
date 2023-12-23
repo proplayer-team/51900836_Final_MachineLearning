@@ -49,11 +49,17 @@ Mini-batch GD giảm độ biến động của hàm mất mát so với SGD và
 Nhìn vào hình bên trên, ta thả hai viên bi từ hai điểm khác nhau A và B, viên bi ở A sẽ trượt xuống đến điểm C, trong khi viên bi ở B sẽ trượt xuống điểm D. Tuy nhiên, chúng ta không muốn viên bi ở B dừng lại ở điểm D (địa phương tối thiểu), mà thay vào đó, nó sẽ tiếp tục lăn xuống điểm C (địa phương tối thiểu toàn cục). Để thực hiện điều này, chúng ta cần cung cấp cho viên bi ở B một vận tốc ban đầu đủ lớn để nó có thể vượt qua điểm E và đến điểm C. Dựa trên ý tưởng này, thuật toán Momentum được phát triển (hay còn gọi là theo đà tiến tới). Tính toán học của thuật toán Momentum có công thức như sau:
 
 **xnew = xold - (gama.v + learningrate.gradient)**
+
 Trong đó:
+
 *•	xnew: tọa độ mới 
+
 •	xold: tọa độ cũ 
-•	gama: parameter, thường =0.9 
+
+•	gama: parameter, thường = 0.9 
+
 •	learningrate: tốc độ học 
+
 •	gradient: đạo hàm của hàm f*
 
 Qua ví dụ trên, ta thấy viên bi sẽ vượt tốc tiến tới điểm global minimum và dao động qua lại quanh điểm đó trước khai dừng lại. Đó cũng chính là ưu điểm của thuật toán so với Gradient Descent thông thường bằng việc tiến được đến điểm global minimum và không chỉ dừng lại ở local minimum.
